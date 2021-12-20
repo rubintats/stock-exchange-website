@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="company-logo-name">
+      <div class="company-image" id="companyImage"></div>
+      <h1 class="company-name" id="companyName"></h1>
+    </div>
+
+    <div>
+      <h3 class="stock-price" id="stockPrice"></h3>
+      <h3 id="changes"></h3>
+    </div>
+
+    <div class="description" id="description"></div>
+    <div class="websiteLink" id="websiteLink"></div>
+    <div class="companyHistory" id="companyHistory"></div>
+    <div
+      class="spinner-border d-none ml-2"
+      id="spinnerCompany"
+      role="status"
+    ></div>
+
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/company.js"></script>
+  <script src="../js/constants.js"></script>
+</html>

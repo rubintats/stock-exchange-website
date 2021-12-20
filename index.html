@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Stock Exchange</title>
+  </head>
+  <body>
+    <div class="marquee" id="marquee"></div>
+    <div class="container d-flex justify-content-center mb-2 mt-3">
+      <div class="row title"><h1>Stock Nasdaq</h1></div>
+    </div>
+    <div class="row d-flex justify-content-center" id="form"></div>
+    <div class="unordered-list" id="results"></div>
+    <script src="./js/Marquee.js"></script>
+    <script src="./js/SearchResults.js"></script>
+    <script src="./js/SearchForm.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (async function () {
+        const marquee = new Marquee(document.getElementById("marquee"));
+        marquee.load();
+        const form = new SearchForm(document.getElementById("form"));
+        const results = new SearchResults(document.getElementById("results"));
+        form.onSearch((companies) => {
+          results.renderResults(companies);
+        });
+      })();
+    </script>
+  </body>
+</html>
